@@ -81,7 +81,6 @@ local plugins = {
         "prettierd",
         "stylua",
         "eslint-lsp",
-        "typescript-language-server",
         "tailwindcss-language-server",
         "css-lsp",
         "prisma-language-server",
@@ -97,6 +96,11 @@ local plugins = {
 
       }
     }
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
   },
   {
     "windwp/nvim-ts-autotag",
