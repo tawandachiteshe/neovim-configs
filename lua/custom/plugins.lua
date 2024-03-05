@@ -8,14 +8,14 @@ local plugins = {
   },
   {
     'Exafunction/codeium.vim',
-    event = 'BufEnter'
-  },
-  {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    config = true
-    -- use opts = {} for passing setup options
-    -- this is equalent to setup({}) function
+    event = 'BufEnter',
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require('core.utils').load_mappings('codeium')
+    end
   },
   {
     "mistricky/codesnap.nvim",

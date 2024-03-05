@@ -14,4 +14,16 @@ M.dap = {
   },
 }
 
+M.codeium = {
+  plugin = true,
+  n = {
+    ["<leader>ac"] = {
+      function()
+        return vim.fn['codeium#Accept']()
+      end,
+      "Accept codeium suggestion"
+    }
+  }
+}
+
 return M
