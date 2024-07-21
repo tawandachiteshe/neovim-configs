@@ -26,4 +26,16 @@ M.codeium = {
   }
 }
 
+M.context = {
+  plugin = true,
+  n = {
+    ["<leader>[c"] = {
+      function()
+        return require('treesitter-context').go_to_context(vim.v.count1)
+      end,
+      "jump to context"
+    }
+  }
+}
+
 return M

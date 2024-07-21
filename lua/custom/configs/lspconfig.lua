@@ -5,13 +5,12 @@ local util = require "lspconfig/util"
 
 local lspconfig = require("lspconfig")
 
-local servers = {"tsserver", "tailwindcss", "eslint", "clangd", "cssls", "cssmodules_ls", "prismals", "graphql", "phpactor"}
+local servers = { "tsserver", "gopls", "tailwindcss", "eslint", "clangd", "cssls", "cssmodules_ls", "prismals",
+  "graphql", "phpactor", "asm_lsp" }
 
 for _, lsp in ipairs(servers) do
-
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
 end
-

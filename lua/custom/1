@@ -16,7 +16,6 @@ local plugins = {
       require("refactoring").setup()
     end,
   },
-  { "nvim-neotest/nvim-nio" },
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
@@ -83,7 +82,7 @@ local plugins = {
       require('rust-tools').setup(opts)
     end
   },
-  { "folke/neodev.nvim",    opts = {} },
+  { "folke/neodev.nvim", opts = {} },
   {
     "mfussenegger/nvim-dap",
     config = function()
@@ -94,14 +93,14 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
-    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    dependencies = "mfussenegger/nvim-dap",
     config = function()
       require('custom.configs.dapui')
     end
   },
   {
     "mxsdev/nvim-dap-vscode-js",
-    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    dependencies = "mfussenegger/nvim-dap",
     run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   },
   {
@@ -193,7 +192,6 @@ local plugins = {
         "json",
         "zig",
         "prisma",
-        "nasm"
       }
 
       return opts
